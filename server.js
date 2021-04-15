@@ -22,6 +22,10 @@ router.get('/stream',function(req,res){
   res.sendFile(path.join(__dirname, '/views'+'/stream.html'));
 });
 
+router.get('/edit',function(req,res){
+  res.sendFile(path.join(__dirname, '/views'+'/edit.html'));
+});
+
 app.use('/', router);
 
 

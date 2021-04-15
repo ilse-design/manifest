@@ -9,6 +9,9 @@ module.exports = app => {
   // Retrieve all manifest edits
   app.get("/manifest", manifests.findAll);
 
+  // get last added manifest
+  app.get("/manifestlast", manifests.findLastOne);
+
   // Retrieve a single manifest edit
   app.get("/manifest/:manifestId", manifests.findOne);
 

@@ -1,8 +1,6 @@
 const Manifest = require("../models/manifest.model.js");
 
 // Create and Save a new Customer
-exports.create = (req, res) => {
-
 	exports.create = (req, res) => {
   // Validate request
   if (!req.body) {
@@ -13,7 +11,7 @@ exports.create = (req, res) => {
 
   // Create a Customer
   const manifest = new Manifest({
-    test: req.body.text,
+    text: req.body.text,
     name: req.body.name
   });
 
@@ -26,21 +24,29 @@ exports.create = (req, res) => {
       });
     else res.send(data);
   });
-};
   
 };
 
-// Retrieve all Customers from the database.
-exports.findAll = (req, res) => {
-  Manifest.getAll((err, data) => {
-    if (err)
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving manifest."
-      });
-    else res.send(data);
-  });
+// Find a last manifest with a manifest id
+exports.findLastOne = (req, res) => {
+console.log("called find last one in controller");
+
+  Manifest.findLast((err, data) => {
+    if (err) {
+      if (err.kind === "not_found") {
+        res.status(404).send({
+          message: `Not found Manifest last id.`
+        });
+      } else {
+        res.status(500).send({
+          message: "Error retrieving Manifest with id " + req.params.manifestId
+        });
+      }
+    } else res.send(data);
+});  
 };
+
+
 
 // Find a single Customer with a customerId
 exports.findOne = (req, res) => {

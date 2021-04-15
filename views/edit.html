@@ -5,16 +5,14 @@
 </head>
 <body>
 
-<h1>Democratic manifest machine</h1>
+<h1>Edit the manifest</h1>
 <p>Undermin_through_design by Ilse Pouwels</p>
 
-<h2>Control GPIO 4</h2>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-
 <script src="script.js"></script>
+
     <script>
         var socket = io.connect(); //load socket.io-client and connect to the host
         function LEDOn() {
@@ -32,30 +30,13 @@
 
     </script>
 
-<img id="play">
-            </br>
-<div id="log"></div>
-
-
-<p id="displayManifest"> This will display the manifest<p>
-
-
-<a href="https://underminethroughdesign-device.dataplicity.io/edit" class="button">Edit</a>
-
-<!--
 <textarea id="manifest-input"  rows="4" cols="50">
-
 </textarea>
 
 
 
 <input id="name-input"></input>
-
-
 <button type="button" onclick="onClickSubmit()" >Submit</button>
-
-
--->
 
     <button type="button" id="state" onclick="LEDOff()" style="background-color:red;">OFF</button>
     <button type="button" id="state" onclick="LEDOn()" style="background-color:green;">ON</button>

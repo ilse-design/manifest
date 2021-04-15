@@ -6,7 +6,7 @@ const Manifest = function(manifest) {
   this.name = manifest.name;
 };
 
-
+//create a new manifest
 Manifest.create = (newManifest, result) => {
   sql.query("INSERT INTO ManifestText.database SET ?", newManifest, (err, res) => {
     if (err) {
@@ -19,6 +19,30 @@ Manifest.create = (newManifest, result) => {
     result(null, { id: res.insertId, ...newManifest });
   });
 };
+
+// find the last edit of the manifest
+Manifest.findLast = result => {
+
+console.log("find last started");
+  sql.query("SELECT * FROM ManifestText.database ORDER BY id DESC LIMIT 0, 1", (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+
+    if (res.length) {
+      console.log("found manifest: ", res[0]);
+      result(null, res[0]);
+      return;
+    }
+
+    // not found Customer with the id
+    result({ kind: "not_found" }, null);
+  });
+};
+
+
 
 Manifest.findById = (manifestId, result) => {
   sql.query(`SELECT * FROM ManifestText.database WHERE id = ${manifestId}`, (err, res) => {
