@@ -55,3 +55,6 @@ const createManifest = (manifest) => {
 fetchManifest();
 
 
+// front end scripting
+document.getElementById('vid').play();
+

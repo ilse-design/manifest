@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+
+.videoContainer{
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-width: 100%;
+    
+}
