@@ -46,7 +46,16 @@ console.log("called find last one in controller");
 });  
 };
 
-
+exports.findAll = (req, res) => {
+  Manifest.getAll((err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving manifest."
+      });
+    else res.send(data);
+  });
+};
 
 // Find a single Customer with a customerId
 exports.findOne = (req, res) => {
