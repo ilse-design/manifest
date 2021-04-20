@@ -8,11 +8,14 @@ const fetchManifest = () => {
 
 
 const fetchManifestLast = () => {
-    axios.get('https://underminethroughdesign-device.dataplicity.io/manifestlast')
+    var lastManifest = axios.get('https://underminethroughdesign-device.dataplicity.io/manifestlast')
         .then(response => {
             console.log(response);
         })
         .catch(error => console.error(error));
+        console.log("last manifest");
+        console.log(displayManifest);
+        document.getElementById("displayManifest").innerText = displayManifest;
 };
 
 
