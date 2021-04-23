@@ -36,6 +36,7 @@ const server = app.listen(80, () => {
   console.log("Server is running on port 80.");
 });
 
+//communication with the gpio ports of the pi. not sure this is needed for the project anymore
 var Gpio = require('onoff').Gpio; //require onoff to control GPIO
 var LEDPin = new Gpio(4, 'out'); //declare GPIO4 an output
 var fs = require('fs'); //require filesystem to read html files
@@ -71,3 +72,23 @@ console.log(data);
     }
   });
 });
+
+// communication with the printer. 
+const SerialPort = require('serialport');
+const Readline = require('@serialport/parser-readline');
+const port = new SerialPort('/dev/serial0', { baudRate: 9600 });
+const parser = port.pipe(new Readline({ delimiter: '\n' }));
+
+// Read the port data
+port.on("open", () => {
+  console.log('serial port open');
+  
+  port.write("Hi there welcome to the manifest\n\n\n\n\n");
+
+  console.log('welcome message printed')
+});
+
+// Open errors will be emitted as an error event
+port.on('error', function(err) {
+  console.log('Error: ', err.message)
+})
