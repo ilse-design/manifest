@@ -22,11 +22,16 @@ console.log("button pressed");
 function LEDOff() {
     socket.emit("state", 0); //send button state to server
 }
+function MessagePrint(){
+    socket.emit("WelcomeMessage", "Welcome to the digital manifest"); //send button state to server
+    console.log("welcome message send");
+}
+
 socket.on('stream',function(image){
         $('#play').attr('src',image);
         $('#log').text(image);
     });
-    
+
 </script>
 
 </head>
@@ -58,6 +63,8 @@ socket.on('stream',function(image){
 
     <button type="button" id="state" onclick="LEDOff()" style="background-color:red;">OFF</button>
     <button type="button" id="state" onclick="LEDOn()" style="background-color:green;">ON</button>
+    <button type="button"  onclick="MessagePrint()" style="background-color:rgb(0, 30, 128);">Print message</button>
+
 
 
 </body>

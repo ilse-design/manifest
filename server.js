@@ -51,6 +51,8 @@ const io = require('socket.io')(server, {
     allowEIO3: true
 });
 
+var message;
+
 io.sockets.on('connection', function (socket) {// WebSocket Connection
 
 console.log("socket turned on");
@@ -66,12 +68,25 @@ console.log("socket turned on");
 console.log("incomming data saved");
 console.log(data);
 
+
+
     if (buttonState != LEDPin.readSync()) { //Change LED state if button state is changed
       LEDPin.writeSync(buttonState); //turn LED on or off
       console.log("button has pressed server recievd")
     }
   });
+  
+
+  socket.on('WelcomeMessage', function (data) { 
+    console.log("socket listening to welcome message");
+    message = data;
+    console.log("message revieced");
+    console.log(message);
+  });
+
 });
+
+
 
 // communication with the printer. 
 const SerialPort = require('serialport');
@@ -82,8 +97,8 @@ const parser = port.pipe(new Readline({ delimiter: '\n' }));
 // Read the port data
 port.on("open", () => {
   console.log('serial port open');
-  
-  port.write("Hi there welcome to the manifest\n\n\n\n\n");
+
+  port.write(message);
 
   console.log('welcome message printed')
 });
