@@ -38,16 +38,8 @@ const Readline = require('@serialport/parser-readline');
 const port = new SerialPort('/dev/serial0', { baudRate: 9600 });
 const parser = port.pipe(new Readline({ delimiter: '\n' }));
 
-// Read the port data
-//port.on("open", () => {
-  console.log('serial port open');
-
-//if (newMessge == true ){
- 
+  console.log('printer opening');
  port.write("start-up succesfully \n \n");
-//port.write("hello there this should test the emitData function \n\n\");
- 
-
 
 // set port, listen for requests
 const server = app.listen(80, () => {
@@ -59,6 +51,9 @@ var Gpio = require('onoff').Gpio; //require onoff to control GPIO
 var LEDPin = new Gpio(4, 'out'); //declare GPIO4 an output
 var fs = require('fs'); //require filesystem to read html files
 
+//message that it will recieve form the script in the index.html file
+let  message="weclome \n";
+
 const io = require('socket.io')(server, {
     cors: {
         origin: "http://localhost:80",
@@ -69,9 +64,6 @@ const io = require('socket.io')(server, {
     allowEIO3: true
 });
 
-let  message="weclome \n";
-let initMessage="weclome \n";
-var newMessge = false;
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
 
@@ -113,18 +105,3 @@ console.log(newMessge);
 });
 
 
-
-
-// Read the port data
-//port.on("open", () => {
-//  console.log('serial port open');
-
-// port.write(message);
-//port.write("hello there this should test the emitData function \n\n\");
-//  console.log('welcome message printed')
-//});
-
-// Open errors will be emitted as an error event
-//port.on('error', function(err) {
-//  console.log('Error: ', err.message)
-//})
