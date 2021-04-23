@@ -83,7 +83,7 @@ const parser = port.pipe(new Readline({ delimiter: '\n' }));
 port.on("open", () => {
   console.log('serial port open');
   
-  port.write("Hi there welcome to the manifest\n\n\n\n\n");
+//  port.write("Hi there welcome to the manifest\n\n\n\n\n");
 
   console.log('welcome message printed')
 });
