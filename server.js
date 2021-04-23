@@ -36,6 +36,7 @@ const server = app.listen(80, () => {
   console.log("Server is running on port 80.");
 });
 
+
 var Gpio = require('onoff').Gpio; //require onoff to control GPIO
 var LEDPin = new Gpio(4, 'out'); //declare GPIO4 an output
 var fs = require('fs'); //require filesystem to read html files
@@ -71,3 +72,5 @@ console.log(data);
     }
   });
 });
+
+
