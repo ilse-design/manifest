@@ -14,14 +14,14 @@ console.log("fetch last manifest");
 	    console.log("last manifest");
 	    var lastManifest = response.data.text;
 	    console.log(lastManifest);
-            document.getElementById("displayManifest").innerText = lastManifest;
+            document.getElementById("displayCard").innerText = lastManifest;
 
         })
         .catch(error => console.error(error));
 
 };
 
-
+ 
 
 const createManifest = (manifest) => {
     axios.post('https://underminethroughdesign-device.dataplicity.io/manifest', manifest)
