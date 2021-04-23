@@ -58,17 +58,4 @@ fetchManifest();
 // front end scripting
 document.getElementById('vid').play();
 
-// socket connection to server.js
-var socket = io.connect(); //load socket.io-client and connect to the host
-function LEDOn() {
-    socket.emit("state", 1); //send button state to server
-console.log("button pressed");
-}
 
-function LEDOff() {
-    socket.emit("state", 0); //send button state to server
-}
-socket.on('stream',function(image){
-        $('#play').attr('src',image);
-        $('#log').text(image);
-    });
