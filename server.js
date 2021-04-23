@@ -31,6 +31,24 @@ app.use('/', router);
 
 require("./app/routes/manifest.routes.js")(app);
 
+
+// communication with the printer. 
+const SerialPort = require('serialport');
+const Readline = require('@serialport/parser-readline');
+const port = new SerialPort('/dev/serial0', { baudRate: 9600 });
+const parser = port.pipe(new Readline({ delimiter: '\n' }));
+
+// Read the port data
+//port.on("open", () => {
+  console.log('serial port open');
+
+//if (newMessge == true ){
+ 
+ port.write("start-up succesfully \n \n");
+//port.write("hello there this should test the emitData function \n\n\");
+ 
+
+
 // set port, listen for requests
 const server = app.listen(80, () => {
   console.log("Server is running on port 80.");
@@ -51,7 +69,9 @@ const io = require('socket.io')(server, {
     allowEIO3: true
 });
 
-var message;
+let  message="weclome \n";
+let initMessage="weclome \n";
+var newMessge = false;
 
 io.sockets.on('connection', function (socket) {// WebSocket Connection
 
@@ -82,28 +102,29 @@ console.log(data);
     message = data;
     console.log("message revieced");
     console.log(message);
+    newMessge=true;
+	port.write("\n \n");
+	port.write(message);
+	port.write("\n \n");
+console.log(newMessge);
+
   });
 
 });
 
 
 
-// communication with the printer. 
-const SerialPort = require('serialport');
-const Readline = require('@serialport/parser-readline');
-const port = new SerialPort('/dev/serial0', { baudRate: 9600 });
-const parser = port.pipe(new Readline({ delimiter: '\n' }));
 
 // Read the port data
-port.on("open", () => {
-  console.log('serial port open');
+//port.on("open", () => {
+//  console.log('serial port open');
 
-  port.write(message);
-
-  console.log('welcome message printed')
-});
+// port.write(message);
+//port.write("hello there this should test the emitData function \n\n\");
+//  console.log('welcome message printed')
+//});
 
 // Open errors will be emitted as an error event
-port.on('error', function(err) {
-  console.log('Error: ', err.message)
-})
+//port.on('error', function(err) {
+//  console.log('Error: ', err.message)
+//})
