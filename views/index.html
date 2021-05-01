@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <title>Manifest Machine</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2.2.2/dist/flickity.min.css" media="screen">
+<script src="https://unpkg.com/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
 
-<link rel=“stylesheet” type=“text/css” href=“style.css” />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="script.js"></script>
+<script src="script.js"></script> -->
 
-<script>
+<!-- <script>
 
 // socket connection to server.js
 var socket = io.connect(); //load socket.io-client and connect to the host
@@ -33,31 +36,166 @@ socket.on('stream',function(image){
     });
 
 </script>
-
+ -->
 </head>
 <body>
 
-<!-- <div class="videoContainer">
-    <video autoplay loop muted class=front_video id="vid">
-	    <source src="assets/img/homeBackground2_short.mp4" type="video/mp4"> 
-        <source src="video/frontPage.ogv" type="video/ogg">
-        <source src="video/frontPage.webm" type="video/webm">            
-        <img src="img/front_image.jpg" title="Your browser does not support the <video> tag" />
-    </video>
- </div> -->
+<div class="header">
+    <div class="textFlex">
+        <p id="alignLeft" class='textHeading'>_Open 8:00-20:00 🕗</p>
+        <p class='textHeading' > _Eindhoven 🌍</p>
+        <p class='textHeading'>_ActiveVisitors:1 👀</p>
+        <p class='textHeading'>_Online 🟢</p>
+    </div>
+    </div>
+<div class="front">
+<div class="bg"></div>
 
-<h1>Democratic manifest machine</h1>
-<p>Undermine_through_design by Ilse Pouwels</p>
+<h1 id="title">_The Nomad Server where the digital design manifest is kept and collectively writen</h1>
+<img id="selfieStream" src="img/selfieStream.png">
+<p id="numbersEngagement">Visitors: 56<br>
+    Signatures:29<br>
+    Contributers:7
+</p>
+
+</div>
+<div class="wrapper"> 
+
+    <div class="flexVersion">
+    <p id="version">Current version: V 1.0.0<br>
+        Next release: 10-05-2021</p>
+
+        <a href="#" class="versionButton">Version History 🕙</a>
+    </div>
+
+<div class="currentManifest">
+
+    <h1 id="manifestTitle">The Digital Design Manifest</h1>
+<div id="manifestText">
+<p  >
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+   
+</p>
+
+<p>
+    Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+</p>
 
 
-<img id="play">
-            </br>
-<div id="log"></div>
+<p>
+Design handels<br>
+🪢 Friction .....................<br>
+👀 Visibility .........................<br>
+🔋 Disposability ...................<br>
 
-<iframe src="https://silkiest-axolotl-8322.dataplicity.io/" style="widht:400px; height:400px;"  title="Iframe Example"></iframe>
+</p>
 
 
-    <h2>Contribute to the manifest by donating your thoughts</h2>
+</div>
+</div>
+
+
+
+
+
+<div class="flexSign">
+   
+    <input placeholder="Your name" id="nameSign"></input>
+    <a id="signButton">Sign 🖋️</a>
+
+</div>
+
+
+
+
+<h2 class="title">Contribute to the manifest by donating your thoughts</h2>
+
+
+<div id="inputCard">
+
+<textarea id="cardInput" placeholder="Type here..." rows="15" cols="50"></textarea>
+<input id="nameCard" placeholder="Your name" ></input>
+<a href="#" onclick="onClickSubmit()" id="submitCard">Submit 💌</a>
+
+</div>
+
+<h3 id="examplecardtext">Donations from other contributors</h3>
+
+
+
+
+  <div class="carousel"
+  data-flickity='{ "imagesLoaded": true, "prevNextButtons": false, "percentPosition": false, "initialIndex": 1}'>
+  <img src="img/card1.png" alt="orange tree" />
+  <img src="img/card2.png" alt="submerged" />
+  <img src="img/card3.png" alt="look-out" />
+
+</div>
+
+  
+
+
+
+<div>
+
+    <h2 class="title" >About this project</h2>
+    <p id="textAbout">Where does this project live? This whole website is hosted on the manifest machine that lives in Eindhoven.The reason for this is to put the principles proposed above put in practice imediatly. With project running on a server owned by me, I take responsibility over the project. </p>
+
+<img id="eindhoven" src="img/eindhoven.png">
+<h3 id="eindhovenTitle">EINDHOVEN, NL</h3>
+
+<p id="textAbout">Where does this project live? This whole website is hosted on the manifest machine that lives in Eindhoven.The reason for this is to put the principles proposed above put in practice imediatly. With project running on a server owned by me, I take responsibility over the project. </p>
+
+<img class="fullwidth modelSetup" src="img/template-setup.png">
+
+
+</div>
+
+<div>
+
+    <h2 class="title" >Experiments to test the principles in the wild</h2>
+    <p id="textAbout">Where does this project live? This whole website is hosted on the manifest machine that lives in Eindhoven.The reason for this is to put the principles proposed above put in practice imediatly. With project running on a server owned by me, I take responsibility over the project. </p>
+
+<div class="experiments">
+    <div>
+<img class="experiment" src="img/toilet.png">
+<h2>The Toilet(sc)roller</h2>
+</div>
+<div>
+<img class="experiment" src="img/feed.png">
+<h2>Singel Frame Feed</h2>
+</div>
+<div>
+<img class="experiment" src="img/tinder.png">
+<h2>Unmatch data</h2>
+</div>
+</div>
+
+
+</div>
+
+<div class="contact">
+
+    <h2 class="title" >Any thoughts about this project or just want to chat <br> don't hesitate to hit me up 👋.</h2>
+    <p id="textContact">
+        📧 ilsepouwels.design@gmail.com<br>
+
+        Project by Ilse Pouwels <br>
+
+
+    </p>
+
+
+
+</div>
+
+<div style="height: 1000px;">
+
+
+</div>
+
+
     <h3>Which principles do you think we should design by?</h3>
 
     <textarea id="manifest-input"  rows="4" cols="50">

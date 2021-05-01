@@ -1,19 +1,447 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    min-width: fit-content;
+  }
 
+  h2{
+    font-family: "Open Sans"; 
+    font-size: 1.6em; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    text-align: center;
 
+  }
 
+  h3{ 
 
+    font-family: "Open Sans"; 
+    font-size: 1.2em; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    text-align: center;
 
+  }
 
+  .title{
+    margin-top: 150px;
+    margin-bottom: 50px;
 
-
-.videoContainer{
+  }
+  
+  
+  .bg {
+    /* The image used */
+    background-image: url("img/background-placeholder.png");
+    position: relative;
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
     background-repeat: no-repeat;
-    background-position: center bottom;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
-    min-width: 100%;
+  }
+
+
+p {
+    font-size:1em;
     
+    }
+    
+
+
+.header{
+    position: fixed;
+    width: 100%;
+    background-color:white;
+    z-index: 1;
+    border-bottom: 2px solid #000;
+    
+
+}
+
+.textFlex{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    
+}
+
+.textHeading{
+    font-family: "roboto mono", sans-serif;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.front{
+    width: 100%;
+}
+
+#alignLeft{
+    margin-right: auto;
+}
+
+#title{
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+#selfieStream{
+    position: absolute;
+    left: 5%;
+    top: 90%;
+
+}
+
+#numbersEngagement{
+    font-family: "roboto mono", sans-serif;
+    position: absolute;
+    left: 80%;
+    top: 85%;
+}
+
+.wrapper{
+    margin-right: auto; /* 1 */
+    margin-left:  auto; /* 1 */
+  
+    max-width: 1080px; /* 2 */
+  
+    padding-right: 10px; /* 3 */
+    padding-left:  10px; /* 3 */
+   
+}
+
+.flexVersion{
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 6%;
+}
+
+#version{
+    font-family: "roboto mono", sans-serif; 
+    font-size: 0.8em;
+    
+}
+
+.versionButton{
+ 
+    border-style: solid;
+    border-color: #000;
+    background-color: #ffffff;
+    color:#000;
+    border-radius: 5px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: "roboto mono", sans-serif; 
+    font-size: 0.8em;
+    border-width: thin;
+}
+
+.currentManifest{
+    border-style: solid;
+    border-color: #000;
+    background-color: #ffffff;
+    color:#000;
+    border-radius: 5px;
+    padding:40px;
+    margin-top: 2%;
+
+}
+
+#manifestTitle{
+    padding-bottom: 5%;
+    text-align: center;
+    font-family: "Open Sans"; font-size: 3em; font-style: normal; font-variant: normal; font-weight: 650; 
+}
+
+#manifestText{
+    padding-left:10%;
+    padding-right:10%;
+    font-family: "Open Sans";
+}
+
+.flexSign{
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+}
+
+#nameSign{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:4%;
+    width:30%;
+    padding: 12px 20px;
+    border: 1px solid rgb(29, 29, 29);
+    border-radius: 4px;
+    box-sizing: border-box;
+ 
+}
+
+#signButton{
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: #000;
+    background-color: #ffffff;
+    color:#000;
+    border-radius: 5px;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "roboto mono", sans-serif; 
+    font-size: 1.5em;
+    border-width: thin;
+    width: 20%
+}
+
+#inputCard{
+    margin-bottom: 100px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center; 
+    width:30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#cardInput{
+    font-family: "Open Sans"; 
+    font-size: 1.2em; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    padding: 30px 30px;
+    resize: none;
+    border-style: solid;
+    border-color: #000;
+    background-color: #FCF7E6;
+    border-radius: 5px;
+    border-width: 2px;
+
+
+}
+
+#nameCard{
+    font-family: "Open Sans"; 
+    font-size: 1.1em; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 500; 
+    background-color: #FCF7E6;
+    border:none;
+    margin-left: 30px;
+    border-top: solid;
+    border-width: 0.5px;
+    margin-top: -40px;
+    width:80%;
+
+}
+
+#submitCard{
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: #000;
+    background-color: #ffffff;
+    color:#000;
+    border-radius: 5px;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "roboto mono", sans-serif; 
+    font-size: 1.2em;
+    border-width: thin;
+
+}
+
+
+#examplecardtext{
+    margin-bottom: 40px;
+}
+
+
+/* external css: flickity.css */
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.carousel {
+  background: rgb(255, 255, 255);
+}
+
+.carousel img {
+  display: block;
+  height: 280px;
+  margin-left: 20px;;
+}
+
+@media screen and ( min-width: 768px ) {
+  .carousel img {
+    height: 350px;
+  }
+}
+
+#titleAbout{
+    margin-top: 150px;
+}
+
+#textAbout {
+    width:80%;
+    margin:auto;
+    font-family: "Open Sans";
+}
+
+#eindhoven{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    margin-top: 60px;
+
+}
+
+#eindhovenTitle{
+    font-family: "Open Sans"; font-size: 1.5em; font-style: normal; 
+    font-variant: normal; font-weight: 500; 
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+.modelSetup{
+margin-top: 50px;
+
+}
+.fullwidth{
+    width:100%;
+}
+
+.experiments{
+    margin-top: 120px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.experiment{ width:70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.contact{
+    margin-top: 200px;
+}
+#titleContact{
+
+    font-family: "Open Sans"; font-size: 1.4em; font-style: normal; 
+    font-variant: normal; font-weight: 500; 
+}
+
+#textContact{
+    width:80%;
+    margin:auto;
+    font-family: "Open Sans";
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+    p {
+            font-size:1.5em;
+            
+            }
+     .textHeading{
+                font-size:1em;
+            }
+    
+    .header{
+    
+                background-color:rgb(243, 21, 21);
+    
+                
+            
+            }
+        #numbersEngagement{
+            font-size: 1em; 
+            font-family: "roboto mono", sans-serif;
+            position: absolute;
+            left: 100%;
+            top: 85%;
+
+        }
+      }
+
+@media (min-width: 767px) {
+
+p {
+        font-size:1.5em;
+        
+        }
+ .textHeading{
+            font-size:1em;
+        }
+
+.header{
+
+            background-color:rgb(243, 139, 21);
+
+            
+        
+        }
+  }
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    p {
+        font-size:1em;
+        
+        }
+        .header{
+
+            background-color:rgb(255, 255, 255);
+
+            
+        
+        }
+
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    p {
+        font-size:1em;
+        
+        }
+
+
+
 }
