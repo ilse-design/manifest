@@ -1,7 +1,7 @@
 const Manifest = require("../models/manifest.model.js");
 
 // Create and Save a new Customer
-	exports.create = (req, res) => {
+	exports.createSig = (req, res) => {
   // Validate request
   if (!req.body) {
     res.status(400).send({
@@ -39,7 +39,17 @@ exports.findAllSig = (req, res) => {
 };
 
 /// --------------------------------   manifest ----------------------------------------------------
-    // Create a manifest
+
+exports.create = (req, res) => {
+  // Validate request
+  if (!req.body) {
+    res.status(400).send({
+      message: "Content can not be empty!"
+    });
+  }
+
+
+// Create a manifest
     const manifest = new Manifest({
       text: req.body.text,
       name: req.body.name
@@ -54,7 +64,7 @@ exports.findAllSig = (req, res) => {
       });
     else res.send(data);
   });
-  
+};
 
 
 // Find a last manifest with a manifest id
