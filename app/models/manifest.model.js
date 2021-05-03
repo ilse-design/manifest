@@ -2,7 +2,7 @@
 // ------------------------------------------------------------------- manifest -----------------------------
 
 
-
+const sql = require("./index.js");
 
 // constructor
 const Manifest = function(manifest) {
