@@ -1,6 +1,7 @@
 
 module.exports = app => {
   const manifests = require("../controllers/manifest.controller.js");
+  const signature = require("../controllers/signature.controller.js");
 
 
   // Create a new manifest edit
@@ -26,9 +27,9 @@ module.exports = app => {
 
 
   // Create a new signature edit
-  app.post("/siganture", manifests.createSig);
+  app.post("/siganture", signature.createSig);
 
   // Retrieve all signatures edits
-  app.get("/signature", manifests.findAllSig);
+  app.get("/signature", signature.findAllSig);
 
 };
