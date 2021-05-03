@@ -53,6 +53,7 @@ var fs = require('fs'); //require filesystem to read html files
 
 //message that it will recieve form the script in the index.html file
 let  message="weclome \n";
+let d ="";
 
 const io = require('socket.io')(server, {
     cors: {
@@ -92,11 +93,12 @@ console.log(data);
   socket.on('WelcomeMessage', function (data) { 
     console.log("socket listening to welcome message");
     message = data;
+    d = new Date().toString();
     console.log("message revieced");
     console.log(message);
     newMessge=true;
 	port.write("\n \n");
-	port.write(Date.now());
+	port.write(d);
 	port.write("\n \n");
 	port.write(message);
 	port.write("\n \n");
