@@ -9,13 +9,43 @@ const Manifest = require("../models/manifest.model.js");
     });
   }
 
-  // Create a Customer
-  const manifest = new Manifest({
-    text: req.body.text,
-    name: req.body.name
+  // Create a Signature
+  const signature = new Signature({
+    nameSig: req.body.nameSig
   });
+    // Save signature in the database
+    Signature.createSig(signature, (err, data) => {
+      if (err)
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while creating the Signature."
+        });
+      else res.send(data);
+    });
+    
+  };
 
-  // Save Customer in the database
+
+  //find all signatures
+exports.findAllSig = (req, res) => {
+  Signature.getAllSig((err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving signatures."
+      });
+    else res.send(data);
+  });
+};
+
+/// --------------------------------   manifest ----------------------------------------------------
+    // Create a manifest
+    const manifest = new Manifest({
+      text: req.body.text,
+      name: req.body.name
+    });
+
+  // Save Customer in the manifest
   Manifest.create(manifest, (err, data) => {
     if (err)
       res.status(500).send({
@@ -25,7 +55,7 @@ const Manifest = require("../models/manifest.model.js");
     else res.send(data);
   });
   
-};
+
 
 // Find a last manifest with a manifest id
 exports.findLastOne = (req, res) => {
@@ -46,6 +76,7 @@ console.log("called find last one in controller");
 });  
 };
 
+//find all manifest
 exports.findAll = (req, res) => {
   Manifest.getAll((err, data) => {
     if (err)

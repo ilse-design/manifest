@@ -19,9 +19,24 @@ console.log("fetch last manifest");
         })
         .catch(error => console.error(error));
 
+
+    axios.get('https://underminethroughdesign-device.dataplicity.io/signature')
+        .then(response => {
+            console.log(response);
+
+            var lastSig = response.data.id;
+	    console.log(lastSig);
+            document.getElementById("amountSig").innerText = lastSig;
+
+        })
+        .catch(error => console.error(error));
+
+
 };
 
  
+
+
 
 const createManifest = (manifest) => {
     axios.post('https://underminethroughdesign-device.dataplicity.io/manifest', manifest)
@@ -49,6 +64,35 @@ const createManifest = (manifest) => {
 
 	
 };
+
+const createSignature = (nameSig) => {
+    axios.post('https://underminethroughdesign-device.dataplicity.io/signature', manifest)
+        .then(response => {
+            console.log(response);
+                 })
+        .catch(error => console.error(error));
+};
+
+
+
+const onSign = () => {
+
+	var nameSig = document.getElementById("nameSig").value;
+
+	var nameSig = {
+		nameSig: nameSig
+	
+	};
+
+	console.log("log of the signature send with on click from the script.js");
+	console.log(manifest);
+
+	createSignature(nameSig);
+
+	
+};
+
+
 
 
 

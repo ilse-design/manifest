@@ -23,4 +23,12 @@ module.exports = app => {
 
   // delete all
   app.delete("/manifest", manifests.deleteAll);
+
+
+  // Create a new signature edit
+  app.post("/siganture", manifests.createSig);
+
+  // Retrieve all signatures edits
+  app.get("/siganture", manifests.findAllSig);
+
 };
