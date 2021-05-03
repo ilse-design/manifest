@@ -65,14 +65,6 @@ const createManifest = (manifest) => {
 	
 };
 
-const createSignature = (nameSig) => {
-    axios.post('https://underminethroughdesign-device.dataplicity.io/signature', manifest)
-        .then(response => {
-            console.log(response);
-                 })
-        .catch(error => console.error(error));
-};
-
 
 
 const onSign = () => {
