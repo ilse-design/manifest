@@ -96,6 +96,8 @@ console.log(data);
     console.log(message);
     newMessge=true;
 	port.write("\n \n");
+	port.write(Date.now());
+	port.write("\n \n");
 	port.write(message);
 	port.write("\n \n");
 console.log(newMessge);
