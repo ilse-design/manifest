@@ -25,7 +25,7 @@ console.log("fetch last manifest");
 	    console.log("last manifest");
 	    var lastManifest = response.data.id;
 	    console.log(lastManifest);
-            document.getElementById("displayCard").innerText = lastManifest;
+            document.getElementById("amountCont").innerText = lastManifest;
 
         })
         .catch(error => console.error(error));
