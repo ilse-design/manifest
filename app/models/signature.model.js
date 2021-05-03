@@ -4,7 +4,7 @@ const sql = require("./index.js");
 
 // constructor
 const Signature = function(signature) {
-  this.nameSig = signature.nameSig;
+  this.name = signature.nameSig;
 
 };
 
