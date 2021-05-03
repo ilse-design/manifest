@@ -48,8 +48,8 @@ const createManifest = (manifest) => {
 
  const onClickSubmit = () => {
 
-	var name = document.getElementById("name-input").value;
-	var manifestInput = document.getElementById("manifest-input").value;
+	var name = document.getElementById("nameCard").value;
+	var manifestInput = document.getElementById("cardInput").value;
 
 	var manifest = {
 		text: manifestInput,
@@ -65,7 +65,13 @@ const createManifest = (manifest) => {
 	
 };
 
-
+const createSignature = (nameSig) => {
+    axios.post('https://underminethroughdesign-device.dataplicity.io/signature', nameSig)
+        .then(response => {
+            console.log(response);
+                 })
+        .catch(error => console.error(error));
+};
 
 const onSign = () => {
 
@@ -77,7 +83,7 @@ const onSign = () => {
 	};
 
 	console.log("log of the signature send with on click from the script.js");
-	console.log(manifest);
+	console.log(nameSig);
 
 	createSignature(nameSig);
 
