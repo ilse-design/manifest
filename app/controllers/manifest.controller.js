@@ -29,7 +29,7 @@ const Signature = require("../models/manifest.model.js");
 
   //find all signatures
 exports.findAllSig = (req, res) => {
-  Signature.getAllSig((err, data) => {
+  Manifest.getAllSig((err, data) => {
     if (err)
       res.status(500).send({
         message:
