@@ -27,7 +27,7 @@ module.exports = app => {
 
 
   // Create a new signature edit
-  app.post("/siganture", signature.createSig);
+  app.post("/signature", signature.createSig);
 
   // Retrieve all signatures edits
   app.get("/signature", signature.findAllSig);
