@@ -2,6 +2,7 @@ body, html {
     height:100%;
     padding:0;
     margin:0;
+    scroll-behavior: smooth;
     
   }
 
@@ -26,11 +27,10 @@ body, html {
 
   }
 
-  .title{
-    margin-top: 150px;
-    margin-bottom: 50px;
-
-  }
+p{
+    font-family: "Raleway";
+    line-height:1.4em;
+}
   
  
 
@@ -55,7 +55,26 @@ p {
     
     }
     
-
+.wrapper{
+        margin-right: auto; /* 1 */
+        margin-left:  auto; /* 1 */
+      
+        max-width: 1080px; /* 2 */
+      
+        padding-right: 10px; /* 3 */
+        padding-left:  10px; /* 3 */
+       
+    }
+    
+.section{
+        margin-top:300px;
+ }
+    
+.text{
+        width:80%;
+        margin:auto;
+        margin-bottom: 30px;
+    }
 
 .header{
     position: fixed;
@@ -99,14 +118,19 @@ p {
     margin-right: auto;
 }
 
-#title{
-
+.titlePage{
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 65%;
     width: 100%;
     text-align: center;
     color: #000;
+    font-family: "Raleway";
+}
+
+#subTitle{
+font-size: 1.2em;
+    
 }
 #selfieStream{
     position: absolute;
@@ -122,21 +146,12 @@ p {
     top: 85%;
 }
 
-.wrapper{
-    margin-right: auto; /* 1 */
-    margin-left:  auto; /* 1 */
-  
-    max-width: 1080px; /* 2 */
-  
-    padding-right: 10px; /* 3 */
-    padding-left:  10px; /* 3 */
-   
-}
+
 
 .flexVersion{
     display: flex;
     justify-content: space-between; 
-    margin-top: 6%;
+    margin-top: 150px;
 }
 
 #version{
@@ -178,13 +193,14 @@ p {
 #manifestTitle{
     padding-bottom: 5%;
     text-align: center;
-    font-family: "Open Sans"; font-size: 3em; font-style: normal; font-variant: normal; font-weight: 650; 
+    font-family: "Raleway"; font-size: 3em; font-style: normal; font-variant: normal; font-weight: 650; 
 }
 
 #manifestText{
     padding-left:10%;
     padding-right:10%;
-    font-family: "Open Sans";
+    font-family: "Raleway";
+    line-height:1.8;
 }
 
 .flexSign{
@@ -206,7 +222,7 @@ p {
 }
 
 #signButton{
-    margin-top: 2%;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     border-style: solid;
@@ -227,6 +243,7 @@ p {
 }
 
 #inputCard{
+    margin-top: 60px;
     margin-bottom: 100px;
     display:flex;
     flex-direction: column;
@@ -320,12 +337,13 @@ body { font-family: sans-serif; }
 
 #titleAbout{
     margin-top: 150px;
+    
 }
 
 #textAbout {
     width:80%;
     margin:auto;
-    font-family: "Open Sans";
+
 }
 
 #eindhoven{
@@ -338,22 +356,31 @@ body { font-family: sans-serif; }
 }
 
 #eindhovenTitle{
-    font-family: "Open Sans"; font-size: 1.5em; font-style: normal; 
+    font-family: "Open Sans"; font-size: 1.3em; font-style: normal; 
     font-variant: normal; font-weight: 500; 
     text-align: center;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
 }
 
-.modelSetup{
-margin-top: 50px;
-
+.modelImages{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 80px;
 }
-.fullwidth{
-    width:100%;
+
+#modelImage1{
+    width:63.6%;
+    height:10%;
+}
+#modelImage2{
+    width:34%;
+    height:12%;
+ 
 }
 
 .experiments{
-    margin-top: 120px;
+    margin-top: 80px;
     display:flex;
     justify-content:space-between;
 }
@@ -364,9 +391,7 @@ margin-top: 50px;
     display: block;
 }
 
-.contact{
-    margin-top: 200px;
-}
+
 #titleContact{
 
     font-family: "Open Sans"; font-size: 1.4em; font-style: normal; 
@@ -380,6 +405,18 @@ margin-top: 50px;
     text-align: center;
     font-size: 1.2em;
 }
+
+
+
+
+#thesisdisclaimer{
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
+
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */

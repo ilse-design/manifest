@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html id="top">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <title>Manifest Machine</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://unpkg.com/flickity@2.2.2/dist/flickity.min.css" media="screen">
+<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+
 <script src="https://unpkg.com/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
@@ -54,9 +57,15 @@ socket.on('stream',function(image){
 <!-- <img src="img/background-placeholder.png" id="front-image"> -->
 <div class="bg"></div>
 
-<h1 id="title">_The Nomad Server where the digital design manifest is kept and collectively writen</h1>
+<div class="titlePage">
+<h1 id="title">_The Nomad Server </h1>
+    
+    <p id="subTitle">where the digital design manifest is kept and collectively writen.</p>
+
+</div>
+
 <img id="selfieStream" src="img/selfieStream.png">
-<p id="numbersEngagement">Visitors: 56<br>
+<p id="numbersEngagement">
     Signatures:29<br>
     Contributers:7
 </p>
@@ -76,21 +85,31 @@ socket.on('stream',function(image){
     <h1 id="manifestTitle">The Digital Design Manifest</h1>
 <div id="manifestText">
 <p  >
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+    The craft of interaction design is failing to serve humans. </p>
+
+<p>Products and services are optimized for efficiency and standardization valuing profit over privacy. 
+We, humans, are becoming the product to be consumed by our technologies. </p>
+
+<p>Addicted by design.</p>
+<p>
+
+I believe that good interaction design can also be the remedy to this issue. Creating humane technology that operates for the common good, strengthening our capacity to tackle our biggest global challenges. 
+Celebrating fluidity, creating interactions that trigger reflection and empower users. 
+</p><p>
+Designing things away and creating hacks.
    
 </p>
 
 <p>
-    Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+    To achieve this, we need to identify different design handles that we can use in our design process.
 </p>
 
 
 <p>
 Design handels<br>
-🪢 Friction .....................<br>
-👀 Visibility .........................<br>
-🔋 Disposability ...................<br>
+🪢 Friction to create a moment of reflection and empowerment.<br>
+👀 Visibility show what is going on so people can take a stance.<br>
+🔋 Disposability of content and update rate of our digital lives.<br>
 
 </p>
 
@@ -105,21 +124,24 @@ Design handels<br>
 <div class="flexSign">
    
     <input placeholder="Your name" id="nameSign"></input>
-    <a id="signButton">Sign 🖋️</a>
+    <a href="#top" id="signButton">Sign 🖋️</a>
 
 </div>
 
 
-
+<div class="section">
 
 <h2 class="title">Contribute to the manifest by donating your thoughts</h2>
+<p class="text">
+    What do you think of the issue of addiction by design? How do you think interaction design can work towards an empowering relationship with technology? What design handles do you think we can use to achieve this?
+</p>
 
 
 <div id="inputCard">
 
 <textarea id="cardInput" placeholder="Type here..." rows="15" cols="50"></textarea>
 <input id="nameCard" placeholder="Your name" ></input>
-<a href="#" onclick="onClickSubmit()" id="submitCard">Submit 💌</a>
+<a href="#top" onclick="onClickSubmit()" id="submitCard">Submit 💌</a>
 
 </div>
 
@@ -136,29 +158,31 @@ Design handels<br>
 
 </div>
 
-  
+</div> 
 
 
 
-<div>
+<div class="section" >
 
     <h2 class="title" >About this project</h2>
-    <p id="textAbout">Where does this project live? This whole website is hosted on the manifest machine that lives in Eindhoven.The reason for this is to put the principles proposed above put in practice imediatly. With project running on a server owned by me, I take responsibility over the project. </p>
+    <p class="text">Where does this project live? This whole website is hosted on the manifest machine that lives in Eindhoven.The reason for this is to put the principles proposed above put in practice imediatly. With project running on a server owned by me, I take responsibility over the project. </p>
 
 <img id="eindhoven" src="img/eindhoven.png">
 <h3 id="eindhovenTitle">EINDHOVEN, NL</h3>
 
-<p id="textAbout">Where does this project live? This whole website is hosted on the manifest machine that lives in Eindhoven.The reason for this is to put the principles proposed above put in practice imediatly. With project running on a server owned by me, I take responsibility over the project. </p>
+<p class="text">The nomad server is printing out a log of every interaction. When people like you visit this website, sign the manifest or contribute to the project by submitting a card. This is your dialogue with the server, by making it physically available in Eindhoven and through the stream for anyone worldwide it aims to give transparency. </p>
 
-<img class="fullwidth modelSetup" src="img/template-setup.png">
-
-
+<div class="modelImages">
+<img id="modelImage1" src="img/sideview.JPG">
+<img id="modelImage2" src="img/topview.JPG">
 </div>
 
-<div>
 
-    <h2 class="title" >Experiments to test the principles in the wild</h2>
-    <p id="textAbout">Where does this project live? This whole website is hosted on the manifest machine that lives in Eindhoven.The reason for this is to put the principles proposed above put in practice imediatly. With project running on a server owned by me, I take responsibility over the project. </p>
+
+
+
+    <h3 class="title" >Experiments</h3>
+    <p class="text">The first three design handles of the manifest are derived from experiments done as part of the thesis Undermine_through_design by Ilse Pouwels. These experiments explored hacks or interventions to challenge our relationship with the digital.</p>
 
 <div class="experiments">
     <div>
@@ -178,13 +202,15 @@ Design handels<br>
 
 </div>
 
-<div class="contact">
+<div class="section">
 
     <h2 class="title" >Any thoughts about this project or just want to chat <br> don't hesitate to hit me up 👋.</h2>
     <p id="textContact">
         📧 ilsepouwels.design@gmail.com<br>
 
-        Project by Ilse Pouwels <br>
+        Project by Ilse Pouwels <br></p>
+        <p id="thesisdisclaimer">
+        This website is one of the outcomes of the thesis project for MFA Interaction Design at the Umeå Institute of Design
 
 
     </p>
