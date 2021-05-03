@@ -29,6 +29,7 @@ console.log("fetch last manifest");
             document.getElementById("amountSig").innerText = lastSig;
 
         })
+
         .catch(error => console.error(error));
 
 
@@ -89,8 +90,6 @@ const onSign = () => {
 
 	
 };
-
-
 
 
 

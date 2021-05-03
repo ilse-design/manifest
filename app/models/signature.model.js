@@ -22,9 +22,10 @@ Signature.createSig = (newSignature, result) => {
   });
 };
 
+
 //get all signatures
 Signature.getAllSig = result => {
-  sql.query("SELECT * FROM ManifestText.signatures", (err, res) => {
+  sql.query("SELECT * FROM ManifestText.signatures ORDER BY id DESC LIMIT 0, 1", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
