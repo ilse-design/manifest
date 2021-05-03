@@ -9,7 +9,7 @@ const Signature = function(signature) {
 };
 
 //create a new signature
-Manifest.createSig = (newSignature, result) => {
+Signature.createSig = (newSignature, result) => {
   sql.query("INSERT INTO ManifestText.signatures SET ?", newSignature, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -23,7 +23,7 @@ Manifest.createSig = (newSignature, result) => {
 };
 
 //get all signatures
-Manifest.getAllSig = result => {
+Signature.getAllSig = result => {
   sql.query("SELECT * FROM ManifestText.signatures", (err, res) => {
     if (err) {
       console.log("error: ", err);
