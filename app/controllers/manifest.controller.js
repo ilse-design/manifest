@@ -14,7 +14,7 @@ const Manifest = require("../models/manifest.model.js");
     nameSig: req.body.nameSig
   });
     // Save signature in the database
-    Signature.createSig(signature, (err, data) => {
+    Manifest.createSig(signature, (err, data) => {
       if (err)
         res.status(500).send({
           message:
@@ -28,7 +28,7 @@ const Manifest = require("../models/manifest.model.js");
 
   //find all signatures
 exports.findAllSig = (req, res) => {
-  Signature.getAllSig((err, data) => {
+  Manifest.getAllSig((err, data) => {
     if (err)
       res.status(500).send({
         message:

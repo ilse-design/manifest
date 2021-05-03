@@ -29,6 +29,6 @@ module.exports = app => {
   app.post("/siganture", manifests.createSig);
 
   // Retrieve all signatures edits
-  app.get("/siganture", manifests.findAllSig);
+  app.get("/signature", manifests.findAllSig);
 
 };
