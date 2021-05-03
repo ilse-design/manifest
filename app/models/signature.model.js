@@ -35,3 +35,5 @@ Signature.getAllSig = result => {
     result(null, res);
   });
 };
+
+module.exports = Signature;
