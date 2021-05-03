@@ -19,6 +19,17 @@ console.log("fetch last manifest");
         })
         .catch(error => console.error(error));
 
+    axios.get('https://underminethroughdesign-device.dataplicity.io/manifestlast')
+        .then(response => {
+            console.log(response);
+	    console.log("last manifest");
+	    var lastManifest = response.data.id;
+	    console.log(lastManifest);
+            document.getElementById("displayCard").innerText = lastManifest;
+
+        })
+        .catch(error => console.error(error));
+
 
     axios.get('https://underminethroughdesign-device.dataplicity.io/signature')
         .then(response => {
