@@ -34,10 +34,13 @@ function LEDOff() {
 
 
 function MessageLanding(){
+    d = new Date().toString();
     socket.emit("message", "Welcome, I am _Hubble."); //send button state to server
     setTimeout(() => { console.log("World!"); }, 500);
     socket.emit("message", "On this page you can view, sign and contribute to the Digital Design Manifest"); //send button state to server
     socket.emit("message", "I am hosting the manifest and keeping a log of the activities"); //send button state to server
+    socket.emit("message", d);
+    
     console.log("message", "welcome message send");
 }
 
