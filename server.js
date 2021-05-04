@@ -52,7 +52,9 @@ var LEDPin = new Gpio(4, 'out'); //declare GPIO4 an output
 var fs = require('fs'); //require filesystem to read html files
 
 //message that it will recieve form the script in the index.html file
-let  message="weclome \n";
+//let  nameSig="- \n";
+let  text="- \n";
+let  nameText="- \n";
 let d ="";
 
 const io = require('socket.io')(server, {
@@ -90,14 +92,33 @@ console.log(data);
   });
   
 
-  socket.on('message', function (data) { 
+  socket.on('text', function (data) { 
     console.log("socket listening to message");
-    message = data;
+    text = data;
+    
+    console.log("message revieced");
+    console.log(message);
+    newMessge=true;
+    port.write("\n");
+	port.write(text);
+  port.write("\n \n");
+  
+console.log(newMessge);
+
+  });
+
+  socket.on('name', function (data) { 
+    console.log("socket listening to message");
+    nameText = data;
     d = new Date().toString();
     console.log("message revieced");
     console.log(message);
     newMessge=true;
-	port.write(message);
+
+	port.write(nameText);
+  port.write("\n \n");
+  port.write(d);
+
 console.log(newMessge);
 
   });

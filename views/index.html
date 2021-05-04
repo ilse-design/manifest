@@ -52,17 +52,12 @@ function MessageContribute(){
 	var manifestInput = document.getElementById("cardInput").value;
     var d = new Date().toString();
 
-    socket.emit("message", manifestInput ); //send button state to server
+    socket.emit("text", manifestInput ); //send button state to server
+    setTimeout(() => { console.log("World!"); }, 800);
+  
+    socket.emit("name", name ); //send button state to server
     setTimeout(() => { console.log("World!"); }, 500);
-    socket.emit("message", "\n \n" ); //send button state to server
-    setTimeout(() => { console.log("World!"); }, 500);
-    socket.emit("message", name ); //send button state to server
-    setTimeout(() => { console.log("World!"); }, 500);
-    socket.emit("message", "\n \n" ); //send button state to server
-    setTimeout(() => { console.log("World!"); }, 500);
-    socket.emit("message", d ); //send button state to server
-    setTimeout(() => { console.log("World!"); }, 500);
-    socket.emit("message", "\n \n" ); //send button state to server
+    
     
     
     // socket.emit("message", manifestInput); //send button state to server
