@@ -43,7 +43,7 @@ function MessageLanding(){
 
 function MessageSign(){
     var nameSig = document.getElementById("nameSig").value;
-    socket.emit("message", nameSig); //send button state to server
+    socket.emit("sig", nameSig); //send button state to server
     console.log("welcome message send");
 }
 
@@ -53,10 +53,10 @@ function MessageContribute(){
     var d = new Date().toString();
 
     socket.emit("text", manifestInput ); //send button state to server
-    setTimeout(() => { console.log("World!"); }, 800);
+    //setTimeout(() => { console.log("World!"); }, 800);
   
     socket.emit("name", name ); //send button state to server
-    setTimeout(() => { console.log("World!"); }, 500);
+    //setTimeout(() => { console.log("World!"); }, 500);
     
     
     

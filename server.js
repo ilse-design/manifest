@@ -52,7 +52,8 @@ var LEDPin = new Gpio(4, 'out'); //declare GPIO4 an output
 var fs = require('fs'); //require filesystem to read html files
 
 //message that it will recieve form the script in the index.html file
-//let  nameSig="- \n";
+let  nameSig="- \n";
+let  message="weclome \n";
 let  text="- \n";
 let  nameText="- \n";
 let d ="";
@@ -90,7 +91,22 @@ console.log(data);
       console.log("button has pressed server recievd")
     }
   });
+
   
+  socket.on('message', function (data) { 
+    console.log("socket listening to message");
+    message = data;
+    
+    console.log("message revieced");
+    console.log(message);
+
+    port.write("\n");
+	port.write(message);
+  port.write("\n \n");
+  
+
+
+  });
 
   socket.on('text', function (data) { 
     console.log("socket listening to message");
