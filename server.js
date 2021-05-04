@@ -100,13 +100,9 @@ console.log(data);
     console.log("message revieced");
     console.log(message);
 
-    port.write("\n");
-	port.write(message);
-  port.write("\n \n");
-  port.write(d);
-  port.write("\n \n");
-  port.write("\n \n");
-  port.write("\n \n");
+    port.write("\n \n");
+    port.write(message);
+    port.write("\n \n");
 
   });
 
@@ -120,6 +116,11 @@ console.log(data);
     port.write("\n \n");
 	port.write(message);
   port.write("\n \n");
+  port.write(d);
+  port.write("\n \n");
+  port.write("\n \n");
+  port.write("\n \n");
+
 
   });
 
