@@ -32,11 +32,29 @@ function LEDOff() {
 }
 
 function MessagePrint(){
-    socket.emit("WelcomeMessage", "Welcome to the digital manifest"); //send button state to server
+    socket.emit("message", "Welcome to the digital manifest"); //send button state to server
     console.log("welcome message send");
 }
 
+function MessageLanding(){
+    socket.emit("message", "Welcome to the digital manifest"); //send button state to server
+    console.log("welcome message send");
+}
 
+function MessageSign(){
+    socket.emit("message", "Welcome to the digital manifest"); //send button state to server
+    console.log("welcome message send");
+}
+
+function MessageContribute(){
+    var name = document.getElementById("nameCard").value;
+	var manifestInput = document.getElementById("cardInput").value;
+    socket.emit("message", name ); //send button state to server
+    setTimeout(() => { console.log("name send to printer"); }, 500);
+    socket.emit("message", manifestInput); //send button state to server
+    console.log("text send to printer");
+
+}
 
 
 
@@ -145,7 +163,8 @@ Design handels<br>
 
 <textarea id="cardInput" placeholder="Type here..." rows="15" cols="50"></textarea>
 <input id="nameCard" placeholder="Your name" ></input>
-<a href="#top" onclick="onClickSubmit()" id="submitCard">Submit 💌</a>
+<a href="#top" onclick="//onClickSubmit(); 
+MessageContribute()" id="submitCard">Submit 💌</a>
 
 </div>
 
@@ -326,4 +345,9 @@ Design handels<br>
 
 
 </body>
+<script>
+MessageLanding();
+
+    
+</script>
 </html>
