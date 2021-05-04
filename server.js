@@ -113,16 +113,12 @@ console.log(data);
   socket.on('sign', function (data) { 
     console.log("socket listening to message");
     message = data;
-    
+    d = new Date().toString();
     console.log("message revieced");
     console.log(message);
 
-    port.write("\n");
+    port.write("\n \n");
 	port.write(message);
-  port.write("\n \n");
-  port.write(d);
-  port.write("\n \n");
-  port.write("\n \n");
   port.write("\n \n");
 
   });
@@ -130,7 +126,7 @@ console.log(data);
   socket.on('text', function (data) { 
     console.log("socket listening to message");
     text = data;
-    
+    d = new Date().toString();
     console.log("message revieced");
     console.log(message);
     newMessge=true;
