@@ -36,7 +36,7 @@ console.log("fetch last manifest");
             console.log(response);
 
             var lastSig = response.data[0].id;
-	    console.log(lastSig);
+	        console.log(lastSig);
             document.getElementById("amountSig").innerText = lastSig;
 
         })
