@@ -89,8 +89,7 @@ function MessageContribute(){
     </div>
 <div class="front">
 
-<button type="button"  onclick="MessagePrint()" id="testButton" style="background-color:rgb(255, 255, 255);">Print message</button>
-<!-- <img src="img/background-placeholder.png" id="front-image"> -->
+
 <div class="bg"></div>
 
 <div class="titlePage">
@@ -101,12 +100,13 @@ function MessageContribute(){
 </div>
 
 <img id="selfieStream" src="img/selfieStream.png">
-<p id="amountSig">
-    29</p>
-<p id="amountCont">
+<div id="numbersEngagement">
+<p class='textEngagement'>Signatures<span id="amountSig">
+    29</span></p>
+    <p class='textEngagement' >contributors<span id="amountCont">
     7
-</p>
-
+    </span></p>
+</div>
 </div>
 <div class="wrapper"> 
 
@@ -232,7 +232,7 @@ MessageContribute()" id="submitCard">Submit 💌</a>
 <div class="experiments">
     <div>
 <img onclick="document.getElementById('id01').style.display='block'" class="experiment" src="img/toilet.png">
-<h2>The Toilet(sc)roller</h2>
+<h3 id="eindhovenTitle">The Toilet(sc)roller</h3>
 </div>
 
 <div id="id01" class="w3-modal">
@@ -258,7 +258,7 @@ MessageContribute()" id="submitCard">Submit 💌</a>
 
 <div>
 <img class="experiment" onclick="document.getElementById('id02').style.display='block'" src="img/feed.png">
-<h2>Singel Frame Feed</h2>
+<h3 id="eindhovenTitle">Singel Frame Feed</h3>
 </div>
 
 <div id="id02" class="w3-modal">
@@ -287,7 +287,7 @@ MessageContribute()" id="submitCard">Submit 💌</a>
 
 <div>
 <img class="experiment" onclick="document.getElementById('id03').style.display='block'" src="img/tinder.png">
-<h2>Data unmatcher</h2>
+<h3 id="eindhovenTitle" >Data unmatcher</h3>
 </div>
 
 <div id="id03" class="w3-modal">
@@ -334,30 +334,6 @@ MessageContribute()" id="submitCard">Submit 💌</a>
 
 
 </div>
-
-<div style="height: 1000px;">
-
-
-</div>
-
-
-    <h3>Which principles do you think we should design by?</h3>
-
-    <textarea id="manifest-input"  rows="4" cols="50">
-    </textarea>
-    
-    <input id="name-input"></input>
-    <button type="button" onclick="onClickSubmit()" >Submit</button>
-
-    <p id="displayCard"> This will display the manifest<p>
-        <p id="nameCard"> This will display the manifest<p></p>
-
-<a href="https://underminethroughdesign-device.dataplicity.io/edit" class="button">Edit</a>
-
-
-    <button type="button" id="state" onclick="LEDOff()" style="background-color:red;">OFF</button>
-    <button type="button" id="state" onclick="LEDOn()" style="background-color:green;">ON</button>
-    <button type="button"  onclick="MessagePrint()" style="background-color:rgb(0, 30, 128);">Print message</button>
 
 
 
