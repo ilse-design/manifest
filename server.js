@@ -118,7 +118,8 @@ console.log(data);
   port.write("\n \n");
   port.write(d);
   port.write("\n \n");
-  port.write(".");
+  port.write("\n \n");
+  port.write("\n \n");
 
 
   });
@@ -131,7 +132,7 @@ console.log(data);
     console.log(message);
     newMessge=true;
     port.write("\n \n");
-    port.write("Contributed by:");
+    port.write("Contribution:");
     port.write("\n \n");
 	port.write(text);
   port.write("\n \n");
