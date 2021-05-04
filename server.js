@@ -103,8 +103,27 @@ console.log(data);
     port.write("\n");
 	port.write(message);
   port.write("\n \n");
-  
+  port.write(d);
+  port.write("\n \n");
+  port.write("\n \n");
+  port.write("\n \n");
 
+  });
+
+  socket.on('sign', function (data) { 
+    console.log("socket listening to message");
+    message = data;
+    
+    console.log("message revieced");
+    console.log(message);
+
+    port.write("\n");
+	port.write(message);
+  port.write("\n \n");
+  port.write(d);
+  port.write("\n \n");
+  port.write("\n \n");
+  port.write("\n \n");
 
   });
 
