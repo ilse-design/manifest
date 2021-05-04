@@ -40,12 +40,14 @@ function MessageLanding(){
     socket.emit("message", "On this page you can view, sign and contribute to the Digital Design Manifest"); //send button state to server
     socket.emit("message", "I am hosting the manifest and keeping a log of the activities"); //send button state to server
     socket.emit("message", d);
+    socket.emit("message", ".");
     
     console.log("message", "welcome message send");
 }
 
 function MessageSign(){
     var nameSig = document.getElementById("nameSig").value;
+    
     socket.emit("sign", nameSig); //send button state to server
     console.log("welcome message send");
 }

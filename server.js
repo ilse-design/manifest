@@ -112,14 +112,13 @@ console.log(data);
     d = new Date().toString();
     console.log("message revieced");
     console.log(message);
-
     port.write("\n \n");
+    port.write("Signed by:");
 	port.write(message);
   port.write("\n \n");
   port.write(d);
   port.write("\n \n");
-  port.write("\n \n");
-  port.write("\n \n");
+  port.write(".");
 
 
   });
@@ -131,7 +130,9 @@ console.log(data);
     console.log("message revieced");
     console.log(message);
     newMessge=true;
-    port.write("\n");
+    port.write("\n \n");
+    port.write("Contributed by:");
+    port.write("\n \n");
 	port.write(text);
   port.write("\n \n");
   
