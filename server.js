@@ -134,6 +134,9 @@ console.log(newMessge);
 	port.write(nameText);
   port.write("\n \n");
   port.write(d);
+  port.write("\n \n");
+  port.write("\n \n");
+  port.write("\n \n");
 
 console.log(newMessge);
 
