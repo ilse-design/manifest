@@ -50,7 +50,14 @@ function MessageSign(){
 function MessageContribute(){
     var name = document.getElementById("nameCard").value;
 	var manifestInput = document.getElementById("cardInput").value;
-    socket.emit("message", manifestInput + name); //send button state to server
+    var d = new Date().toString();
+    
+    socket.emit("message", manifestInput ); //send button state to server
+    socket.emit("message", "\n \n" ); //send button state to server
+    socket.emit("message", name ); //send button state to server
+    socket.emit("message", "\n \n" ); //send button state to server
+    socket.emit("message", d ); //send button state to server
+    socket.emit("message", "\n \n" ); //send button state to server
     
     
     // socket.emit("message", manifestInput); //send button state to server

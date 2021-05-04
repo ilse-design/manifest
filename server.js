@@ -97,13 +97,7 @@ console.log(data);
     console.log("message revieced");
     console.log(message);
     newMessge=true;
-    port.write("\n \n");
-
-	port.write("\n \n");
 	port.write(message);
-  port.write("\n \n");
-  port.write(d);
-  port.write("_");
 console.log(newMessge);
 
   });
