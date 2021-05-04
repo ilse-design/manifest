@@ -36,9 +36,9 @@ function LEDOff() {
 function MessageLanding(){
     socket.emit("message", "Welcome, I am _Hubble."); //send button state to server
     setTimeout(() => { console.log("World!"); }, 500);
-    socket.emit("On this page you can view, sign and contribute to the Digital Design Manifest"); //send button state to server
-    socket.emit("I am hosting the manifest and keeping a log of the activities"); //send button state to server
-    console.log("welcome message send");
+    socket.emit("message", "On this page you can view, sign and contribute to the Digital Design Manifest"); //send button state to server
+    socket.emit("message", "I am hosting the manifest and keeping a log of the activities"); //send button state to server
+    console.log("message", "welcome message send");
 }
 
 function MessageSign(){
@@ -156,7 +156,8 @@ Design handels<br>
 <div class="flexSign">
    <p class="textCall">Do you agree with this manifest, you can sign it to show your support. </p>
     <input placeholder="Your name" id="nameSig"></input>
-    <a href="#top" onclick="onSign()" id="signButton">Sign 🖋️</a>
+    <a href="#top" onclick="//onSign(); 
+    MessageSign()" id="signButton">Sign 🖋️</a>
     <p class="textCall">Find out how you can contribute to this manifest below.</p>
 
 </div>
