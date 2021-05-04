@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://unpkg.com/flickity@2.2.2/dist/flickity.min.css" media="screen">
 <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <script src="https://unpkg.com/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
 
@@ -14,6 +15,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="script.js"></script> 
+<script src="modal.js"></script> 
 
 <script>
 
@@ -33,6 +35,8 @@ function MessagePrint(){
     socket.emit("WelcomeMessage", "Welcome to the digital manifest"); //send button state to server
     console.log("welcome message send");
 }
+
+
 
 
 
@@ -56,9 +60,9 @@ function MessagePrint(){
 <div class="bg"></div>
 
 <div class="titlePage">
-<h1 id="title">_The Nomad Server </h1>
+<h1 id="title">_Huddle </h1>
     
-    <p id="subTitle">where the digital design manifest is kept and collectively writen.</p>
+    <p id="subTitle">The nomad server where the digital design manifest is kept and collectively writen.</p>
 
 </div>
 
@@ -121,9 +125,10 @@ Design handels<br>
 
 
 <div class="flexSign">
-   
+   <p class="textCall">Do you agree with this manifest, you can sign it to show your support. </p>
     <input placeholder="Your name" id="nameSig"></input>
     <a href="#top" onclick="onSign()" id="signButton">Sign 🖋️</a>
+    <p class="textCall">Find out how you can contribute to this manifest below.</p>
 
 </div>
 
@@ -131,9 +136,9 @@ Design handels<br>
 <div class="section">
 
 <h2 class="title">Contribute to the manifest by donating your thoughts</h2>
-<p class="text">
-    What do you think of the issue of addiction by design? How do you think interaction design can work towards an empowering relationship with technology? What design handles do you think we can use to achieve this?
-</p>
+<p class="text">This manifest is a living document. As individuals, we can not take up the challenge to solve this big issue, but together we can craft a text that can take a stance and inspire the industry. By donating your thoughts to this project you contribute. Your take on this issue will be added to the manifest and visible to the community as an inspiration. 
+   </p> <h5 class="questions">How do you think interaction design can work towards an empowering relationship with technology? How can we change our mindset towards the digital to create a sustainable relationship with it? What design handles do you think we can use to achieve this?
+   </h5>
 
 
 <div id="inputCard">
@@ -164,6 +169,7 @@ Design handels<br>
 <div class="section" >
 
     <h2 class="title" >About this project</h2>
+    <p class="text">As a graduating interaction design student, I saw the need to explore how can design for empowering sustainable relationships with the digital. By observing the world around me I see that the "things" we interact with are becoming complex living systems. The designers' job is to visualize certain aspects of this in the UI, but what about the aspects that we can't see? Data collection, algorithms optimized for consumption and addiction, the energy consumption of these systems. This project was aimed to explore alternatives; create hacks and design things away to inspire that alternatives are possible. </p>
     <p class="text">Where does this project live? This whole website is hosted on the manifest machine that lives in Eindhoven.The reason for this is to put the principles proposed above put in practice imediatly. With project running on a server owned by me, I take responsibility over the project. </p>
 
 <img id="eindhoven" src="img/eindhoven.png">
@@ -183,25 +189,100 @@ Design handels<br>
     <h3 class="title" >Experiments</h3>
     <p class="text">The first three design handles of the manifest are derived from experiments done as part of the thesis Undermine_through_design by Ilse Pouwels. These experiments explored hacks or interventions to challenge our relationship with the digital.</p>
 
+
+
+
+
 <div class="experiments">
     <div>
-<img class="experiment" src="img/toilet.png">
+<img onclick="document.getElementById('id01').style.display='block'" class="experiment" src="img/toilet.png">
 <h2>The Toilet(sc)roller</h2>
 </div>
+
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container"> 
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+         
+        <div class="image-container">
+       
+        <img src="img/image7.gif" />
+        <img src="img/image8.gif"  />
+        <img src="img/image4.gif" />
+    </div>
+    <div class="textModal">
+        <h5>The Toilet (sc)roller</h5><p>Are we more aware of our behaviour when it is reflected by the space around us?<br>Using our physical surroundings to create friction in our engagements with the digital.</p>
+      </div>
+    </div>
+
+      
+      
+    </div>
+  </div>
+
 <div>
-<img class="experiment" src="img/feed.png">
+<img class="experiment" onclick="document.getElementById('id02').style.display='block'" src="img/feed.png">
 <h2>Singel Frame Feed</h2>
 </div>
+
+<div id="id02" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container"> 
+          <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+         
+        <div class="image-container">
+       
+        <img src="img/image5.gif" />
+        <img src="img/image1.jpg"  />
+        <img src="img/image2.jpg" />
+    </div>
+    <div class="textModal">
+        <h5>Single Frame Feed</h5><p>What if we had to live with a single frame of our feed for 24h? By changing the update rate do we value our content more? <br>Do content makers become artist exhibiting in peoples houses?
+          Who deciedes which content is shown, us or an algorithm?  
+        By altering the update rate we might revalue our content, this to counter our disposable mindset we have towards our data.</p>
+      </div>
+    </div>
+
+      
+      
+    </div>
+  </div>
+
+
 <div>
-<img class="experiment" src="img/tinder.png">
-<h2>Unmatch data</h2>
+<img class="experiment" onclick="document.getElementById('id03').style.display='block'" src="img/tinder.png">
+<h2>Data unmatcher</h2>
 </div>
-</div>
+
+<div id="id03" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container"> 
+          <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+         
+        <div class="image-container">
+       
+        <img src="img/image9.gif" />
+        <img src="img/image6.gif"  />
+        <img src="img/image3.gif" />
+    </div>
+    <div class="textModal">
+        <h5>Data unmatcher</h5><p>How could an offboarding experience with your data look like? Are we aware of the amount of data we have? Do we still need this data?<br>Why do we clean-up our oceans but not our servers?<br>
+            When we visualize our digital traces and present them to people we can actively take responsibility.</p>
+      </div>
+    </div>
+
+      
+      
+    </div>
+  </div>
 
 
 </div>
 
-<div class="section">
+
+</div>
+
+<div class="section contactSection">
 
     <h2 class="title" >Any thoughts about this project or just want to chat <br> don't hesitate to hit me up 👋.</h2>
     <p id="textContact">

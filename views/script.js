@@ -104,10 +104,11 @@ const onSign = () => {
 
 
 
+
+
 fetchManifest();
 
 
-// front end scripting
-document.getElementById('vid').play();
+
 
 
