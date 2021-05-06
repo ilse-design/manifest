@@ -103,11 +103,13 @@ console.log(data);
     port.write("\n");
     port.write(message);
     port.write("\n \n");
+	port.write("\n \n");
+port.write("\n \n");
 
   });
 
   socket.on('sign', function (data) { 
-    console.log("socket listening to message");
+    console.log("socket listening to signature");
     message = data;
     d = new Date().toString();
     console.log("message revieced");
@@ -125,7 +127,7 @@ console.log(data);
   });
 
   socket.on('text', function (data) { 
-    console.log("socket listening to message");
+    console.log("socket listening to contribution");
     text = data;
     d = new Date().toString();
     console.log("message revieced");
@@ -142,7 +144,7 @@ console.log(newMessge);
   });
 
   socket.on('name', function (data) { 
-    console.log("socket listening to message");
+    console.log("socket listening to name contributor");
     nameText = data;
     d = new Date().toString();
     console.log("message revieced");
