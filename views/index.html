@@ -35,7 +35,6 @@ function LEDOff() {
 
 function MessageLanding(){
     d = new Date().toString();
-    
     socket.emit("message", d);
     
     console.log("message", "welcome message send");
