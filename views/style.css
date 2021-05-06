@@ -30,9 +30,13 @@ body, html {
 p{
     font-family: "Raleway";
     line-height:1.4em;
+    font-size:1em;
 }
   
- 
+.title{
+    font-family: "Open Sans"; 
+}
+
 
 
  .bg{
@@ -50,10 +54,6 @@ background-image: url(https://unbeaten-dunlin-6153.dataplicity.io/);
   }
 
 
-p {
-    font-size:1em;
-    
-    }
     
 .wrapper{
         margin-right: auto; /* 1 */
@@ -96,7 +96,7 @@ p {
 }
 
 .textHeading{
-    font-family: "roboto mono", sans-serif;
+    font-family: "Roboto Mono", sans-serif;
     padding-left: 1vw;
     padding-right: 1vw;
 }
@@ -148,7 +148,7 @@ font-size: 1.2em;
 }
 
 .textEngagement{
-    font-family: "roboto mono", sans-serif;
+    font-family: "Roboto Mono", sans-serif;
 }
 
 
@@ -159,7 +159,7 @@ font-size: 1.2em;
 }
 
 #version{
-    font-family: "roboto mono", sans-serif; 
+    font-family: "Roboto Mono", sans-serif; 
     font-size: 0.8em;
     
 }
@@ -178,7 +178,7 @@ font-size: 1.2em;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    font-family: "roboto mono", sans-serif; 
+    font-family: "Roboto Mono", sans-serif; 
     font-size: 0.8em;
     border-width: thin;
 }
@@ -250,7 +250,7 @@ font-size: 1.2em;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    font-family: "roboto mono", sans-serif; 
+    font-family: "Roboto Mono", sans-serif; 
     font-size: 1.5em;
     border-width: thin;
     width: 20%
@@ -323,7 +323,7 @@ font-size: 1.2em;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    font-family: "roboto mono", sans-serif; 
+    font-family: "Roboto Mono", sans-serif; 
     font-size: 1.2em;
     border-width: thin;
 
@@ -481,11 +481,24 @@ body { font-family: sans-serif; }
 @media (max-width: 767px) {
 
     p {
-            font-size:1.5em;
+            font-size:1.1em;
             
             }
+
+            .title{
+                font-size:2em;
+            }
+
+#manifestTitle{
+    font-size:2em;
+}
+
+.currentManifest{
+    padding:20px;
+}
+
      .textHeading{
-                font-size:1em;
+                font-size:0.8em;
             }
     
     .header{
@@ -496,19 +509,35 @@ body { font-family: sans-serif; }
             
             }
         #numbersEngagement{
-            font-size: 1em; 
+            font-size: 0.7em; 
             font-family: "roboto mono", sans-serif;
             position: absolute;
-            left: 100%;
-            top: 85%;
+            left: 10%;
+            top: 90%;
 
         }
+        #selfieStream {
+            position: absolute;
+            left: 5%;
+            top: 25%;
+        }
+
+        #nameSig{
+            width:100%;
+        }
+
+        #signButton{
+            width:100%;
+        }
+#inputCard{
+    width:80%;
+}
       }
 
-@media (min-width: 767px) {
+@media (min-width: 767px)and (max-width: 992px)  {
 
 p {
-        font-size:1.5em;
+        font-size:1em;
         
         }
  .textHeading{
@@ -522,8 +551,16 @@ p {
             
         
         }
-  }
+        #inputCard{
+            width:40%;
+        }
 
+#numbersEngagement {
+
+            left: 60%;
+
+  }
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
