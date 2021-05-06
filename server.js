@@ -96,11 +96,11 @@ console.log(data);
   socket.on('message', function (data) { 
     console.log("socket listening to message");
     message = data;
-    
+    d = new Date().toString();
     console.log("message revieced");
     console.log(message);
-
-    port.write("\n \n");
+    port.write("Welcome new visitor");
+    port.write("\n");
     port.write(message);
     port.write("\n \n");
 
