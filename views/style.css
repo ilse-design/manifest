@@ -41,7 +41,7 @@ p{
 
  .bg{
     /* The image used */
-background-image: url(https://bastardly-guineafowl-9563.dataplicity.io/);
+background-image: url(https://unafraid-crab-8439.dataplicity.io/);
    
 
   /* Full height */
@@ -118,19 +118,24 @@ background-image: url(https://bastardly-guineafowl-9563.dataplicity.io/);
 #alignLeft{
     margin-right: auto;
 }
+#title{
+    text-align: left;
+    left:10%;
+}
 
 .titlePage{
     position: absolute;
-    left: 0;
-    top: 65%;
-    width: 100%;
-    text-align: center;
+    left: 5%;
+    top: 15%;
+    background-color:white;
+    padding:10px;
     color: #000;
     font-family: "Raleway";
 }
 
 #subTitle{
 font-size: 1.2em;
+text-align: left;
     
 }
 #selfieStream{
