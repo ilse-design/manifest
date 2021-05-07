@@ -114,7 +114,7 @@ port.write("\n \n");
     d = new Date().toString();
     console.log("message revieced");
     console.log(message);
-    port.write("\n \n");
+    
     port.write("Signed by:");
 	port.write(message);
   port.write("\n \n");
@@ -133,7 +133,7 @@ port.write("\n \n");
     console.log("message revieced");
     console.log(message);
     newMessge=true;
-    port.write("\n \n");
+    
     port.write("Contribution:");
     port.write("\n \n");
 	port.write(text);
