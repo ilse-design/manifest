@@ -501,13 +501,7 @@ body { font-family: sans-serif; }
                 font-size:0.8em;
             }
     
-    .header{
-    
-                background-color:rgb(243, 21, 21);
-    
-                
-            
-            }
+
         #numbersEngagement{
             font-size: 0.7em; 
             font-family: "roboto mono", sans-serif;
@@ -544,13 +538,7 @@ p {
             font-size:1em;
         }
 
-.header{
 
-            background-color:rgb(243, 139, 21);
-
-            
-        
-        }
         #inputCard{
             width:40%;
         }

@@ -24,7 +24,7 @@ Signature.createSig = (newSignature, result) => {
 
 
 //get all signatures
-Signature.getAllSig = result => {
+Signature.getLastSig = result => {
   sql.query("SELECT * FROM ManifestText.signatures ORDER BY id DESC LIMIT 0, 1", (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -33,6 +33,19 @@ Signature.getAllSig = result => {
     }
 
     console.log("signatures: ", res);
+    result(null, res);
+  });
+};
+
+Signature.getAllSig = result => {
+  sql.query("SELECT * FROM ManifestText.signatures", (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    console.log("Signatures: ", res);
     result(null, res);
   });
 };

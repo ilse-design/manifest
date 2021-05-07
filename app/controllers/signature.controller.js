@@ -27,6 +27,17 @@ const Signature = require("../models/signature.model.js");
 
 
   //find all signatures
+exports.findLastSig = (req, res) => {
+  Signature.getLastSig((err, data) => {
+    if (err)
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving signatures."
+      });
+    else res.send(data);
+  });
+};
+
 exports.findAllSig = (req, res) => {
   Signature.getAllSig((err, data) => {
     if (err)
@@ -37,4 +48,3 @@ exports.findAllSig = (req, res) => {
     else res.send(data);
   });
 };
-
