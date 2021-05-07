@@ -31,7 +31,7 @@ console.log("fetch last manifest");
         .catch(error => console.error(error));
 
 
-    axios.get('https://underminethroughdesign-device.dataplicity.io/signature')
+    axios.get('https://underminethroughdesign-device.dataplicity.io/signaturelast')
         .then(response => {
             console.log(response);
 
