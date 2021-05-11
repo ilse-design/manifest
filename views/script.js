@@ -1,12 +1,14 @@
 const fetchManifest = () => {
+    
 console.log("fetch all manifest");
     axios.get('https://underminethroughdesign-device.dataplicity.io/manifest')
         .then(response => {
+            var manifest = response;
             console.log(response);
         })
         .catch(error => console.error(error));
 
-console.log("fetch last manifest");
+
 
     axios.get('https://underminethroughdesign-device.dataplicity.io/manifestlast')
         .then(response => {

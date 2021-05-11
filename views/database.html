@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html id="top">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<title>_Huddle</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2.2.2/dist/flickity.min.css" media="screen">
+<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script src="https://unpkg.com/flickity@2.2.2/dist/flickity.pkgd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- <script src="script.js"></script>  -->
+
+</head>
+
+
+<body>
+
+    <div id=real>
+        
+    </div>
+
+<div id=example>
+<ul id="cards">
+<li id="singleCard">
+    <p id="textCardDatabase" >The texr should all come here! and it should be linger</p>
+    <p id="nametextCardDatabase">Ilse Pouwels</p>
+    <p id="locationCardDatabase">Netherlands</p>
+</li>
+
+<li id="singleCard">
+    <p id="textCardDatabase" >The texr should all come here!</p>
+    <p id="nametextCardDatabase">The name goes here</p>
+    <p id="locationCardDatabase">The location goes here</p>
+</li>
+<li id="singleCard">
+    <p id="textCardDatabase" >The texr should all come here!</p>
+    <p id="nametextCardDatabase">The name goes here</p>
+    <p id="locationCardDatabase">The location goes here</p>
+</li>
+<li id="singleCard">
+    <p id="textCardDatabase" >The texr should all come here!</p>
+    <p id="nametextCardDatabase">The name goes here</p>
+    <p id="locationCardDatabase">The location goes here</p>
+</li>
+
+
+</ul>
+</div>
+
+
+
+
+</body>
+
+<script>
+
+
+const fetchManifest = () => {
+    
+    console.log("fetch all manifest");
+        axios.get('https://underminethroughdesign-device.dataplicity.io/manifest')
+            .then(response => {
+                var manifest = response;
+                console.log(response);
+            })
+            .catch(error => console.error(error));
+    
+    
+    
+    };
+    fetchManifest();
+
+    let activities = [
+        [1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget lorem euismod, bibendum tortor et, eleifend augue. Quisque tincidunt justo id congue condimentum", "jan jansen", "netherlands"],
+        [2, 'Mauris scelerisque volutpat laoreet. Etiam aliquet sollicitudin erat, vitae convallis nisl auctor nec. ', "Sara erikson", "Sweden"],
+        [3, 'Nam justo metus, vulputate sed dictum et, lacinia et neque. Curabitur eget cursus erat. ',"Jhon Jhonson", "USA"]
+    ];
+    console.log(activities[1][1]);
+    
+    let id = [];
+    let text = [];
+    let name = [];
+    let place=[];
+    
+    // loop the outer array
+    for (let i = 0; i < activities.length; i++) {
+        // get the size of the inner array
+         id[i] = activities[i][0];
+
+         text[i]=activities[i][1];
+         name[i]=activities[i][2];
+         place[i]=activities[i][3];
+        // loop the inner array
+        
+    }
+    console.log(id);
+    console.log(text);
+    console.log(name);
+    console.log(place);
+    console.log(activities.length);
+
+    function makeUL(activities) {
+        // Create the list element:
+        var list = document.createElement('ul');
+        list.setAttribute("id", "cards");
+    
+        for(var i = 0; i < activities.length; i++) {
+            // Create the list item:
+            var card = document.createElement('li');
+            card.setAttribute("id", "singleCard");
+
+            text[i]=activities[i][1];
+    
+            
+            // Create the list item:
+            var textCard = document.createElement('p');
+            textCard.setAttribute("id", "textCardDatabase");
+            textCard.appendChild(document.createTextNode(activities[i][1]));
+
+            var nameCard = document.createElement('p');
+            nameCard.setAttribute("id", "nametextCardDatabase");
+            nameCard.appendChild(document.createTextNode(activities[i][2]));
+
+            var placeCard = document.createElement('p');
+            placeCard.setAttribute("id", "locationCardDatabase");
+            placeCard.appendChild(document.createTextNode(activities[i][3]));
+            
+            
+    
+            // Add it to the list:
+            card.appendChild(textCard);
+            card.appendChild(nameCard);
+            card.appendChild(placeCard);
+        
+        list.appendChild(card);
+            
+        }
+    
+        // Finally, return the constructed list:
+        return list;
+    }
+    
+    // Add the contents of options[0] to #foo:
+    document.getElementById('real').appendChild(makeUL(activities));
+
+    
+    </script>
+</html>

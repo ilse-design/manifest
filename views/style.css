@@ -582,3 +582,71 @@ p {
 
 
 }
+
+
+
+/* -------------- cards on card database site--------------- */
+
+#cards{
+    display:flex;
+    flex-direction: row;
+    justify-content: center; 
+    flex-wrap: wrap ;
+    list-style-type: none; /* Remove bullets */
+}
+
+#singleCard{
+    list-style-type: none; /* Remove bullets */
+    padding: 10px 20px;
+    resize: none;
+    border-style: solid;
+    border-color: #000;
+    background-color: #FCF7E6;
+    border-radius: 5px;
+    border-width: 2px;
+    height:400px;
+    width:250px;
+    margin:10px;
+    position: relative;
+
+
+}
+
+#textCardDatabase{
+    font-family: "Open Sans"; 
+    font-size: 1.2em; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+}
+#nametextCardDatabase{
+    position: absolute;
+    bottom:30px;
+    font-family: "Open Sans"; 
+    font-size: 1em; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 500; 
+    background-color: #FCF7E6;
+    border:none;
+    border-top: solid;
+    
+    border-width: 0.5px;
+    width:80%;
+
+}
+#locationCardDatabase{
+    position: absolute;
+    bottom:5px;
+    font-family: "Open Sans"; 
+    font-size: 1em; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 500; 
+   
+    border:none;
+
+    width:80%;
+
+}
+
