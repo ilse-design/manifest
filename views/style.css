@@ -281,6 +281,7 @@ text-align: left;
 }
 
 #cardInput{
+    flex:1;
     font-family: "Open Sans"; 
     font-size: 1.2em; 
     font-style: normal; 
@@ -298,6 +299,7 @@ text-align: left;
 }
 
 #nameCard{
+    height:25px;
     font-family: "Open Sans"; 
     font-size: 1.1em; 
     font-style: normal; 
