@@ -98,21 +98,18 @@ const fetchManifest = () => {
             var card = document.createElement('li');
             card.setAttribute("id", "singleCard");
 
-            text[i]=activities[i][1];
-    
-            
             // Create the list item:
             var textCard = document.createElement('p');
             textCard.setAttribute("id", "textCardDatabase");
-            textCard.appendChild(document.createTextNode(activities[i][1]));
+            textCard.appendChild(document.createTextNode(activities[i].text));
 
             var nameCard = document.createElement('p');
             nameCard.setAttribute("id", "nametextCardDatabase");
-            nameCard.appendChild(document.createTextNode(activities[i][2]));
+            nameCard.appendChild(document.createTextNode(activities[i].name));
 
-            var placeCard = document.createElement('p');
+            /* var placeCard = document.createElement('p');
             placeCard.setAttribute("id", "locationCardDatabase");
-            placeCard.appendChild(document.createTextNode(activities[i][3]));
+            placeCard.appendChild(document.createTextNode(activities[i][3])); */
             
             
     
