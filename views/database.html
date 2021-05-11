@@ -23,11 +23,11 @@
 
 <body>
 
-    <div id=real>
+    <div id="real">
         
     </div>
 
-<div id=example>
+<!-- <div id=example>
 <ul id="cards">
 <li id="singleCard">
     <p id="textCardDatabase" >The texr should all come here! and it should be linger</p>
@@ -53,9 +53,7 @@
 
 
 </ul>
-</div>
-
-
+</div> -->
 
 
 </body>
@@ -70,6 +68,8 @@ const fetchManifest = () => {
             .then(response => {
                 var manifest = response.data;
                 console.log(response);
+                makeUL(manifest);
+                
             })
             .catch(error => console.error(error));
     
@@ -78,34 +78,15 @@ const fetchManifest = () => {
     };
     fetchManifest();
 
-    let activities = [
-        [1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget lorem euismod, bibendum tortor et, eleifend augue. Quisque tincidunt justo id congue condimentum", "jan jansen", "netherlands"],
-        [2, 'Mauris scelerisque volutpat laoreet. Etiam aliquet sollicitudin erat, vitae convallis nisl auctor nec. ', "Sara erikson", "Sweden"],
-        [3, 'Nam justo metus, vulputate sed dictum et, lacinia et neque. Curabitur eget cursus erat. ',"Jhon Jhonson", "USA"]
-    ];
-    console.log(activities[1][1]);
+
     
     let id = [];
     let text = [];
     let name = [];
     let place=[];
-    
-    // loop the outer array
-    for (let i = 0; i < activities.length; i++) {
-        // get the size of the inner array
-         id[i] = activities[i][0];
 
-         text[i]=activities[i][1];
-         name[i]=activities[i][2];
-         place[i]=activities[i][3];
-        // loop the inner array
-        
-    }
-    console.log(id);
-    console.log(text);
-    console.log(name);
-    console.log(place);
-    console.log(activities.length);
+
+ 
 
     function makeUL(activities) {
         // Create the list element:
@@ -140,16 +121,19 @@ const fetchManifest = () => {
             card.appendChild(nameCard);
             card.appendChild(placeCard);
         
-        list.appendChild(card);
-            
+            list.appendChild(card);     
         }
+        console.log(id);
+        console.log(text);
+        console.log(name);
+        console.log(place);
+        console.log(manifest.length);
     
-        // Finally, return the constructed list:
-        return list;
+        document.getElementById('real').appendChild(list);
     }
     
     // Add the contents of options[0] to #foo:
-    document.getElementById('real').appendChild(makeUL(activities));
+    
 
     
     </script>
