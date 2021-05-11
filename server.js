@@ -22,6 +22,10 @@ router.get('/stream',function(req,res){
   res.sendFile(path.join(__dirname, '/views'+'/stream.html'));
 });
 
+router.get('/database',function(req,res){
+  res.sendFile(path.join(__dirname, '/views'+'/database.html'));
+});
+
 router.get('/edit',function(req,res){
   res.sendFile(path.join(__dirname, '/views'+'/edit.html'));
 });
@@ -39,7 +43,7 @@ const port = new SerialPort('/dev/serial0', { baudRate: 9600 });
 const parser = port.pipe(new Readline({ delimiter: '\n' }));
 
   console.log('printer opening');
- port.write("start-up succesfully \n \n");
+// port.write("start-up succesfully \n \n");
 
 // set port, listen for requests
 const server = app.listen(80, () => {

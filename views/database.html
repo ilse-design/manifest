@@ -68,7 +68,7 @@ const fetchManifest = () => {
     console.log("fetch all manifest");
         axios.get('https://underminethroughdesign-device.dataplicity.io/manifest')
             .then(response => {
-                var manifest = response;
+                var manifest = response.data;
                 console.log(response);
             })
             .catch(error => console.error(error));
