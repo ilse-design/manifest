@@ -42,8 +42,15 @@ const Readline = require('@serialport/parser-readline');
 const port = new SerialPort('/dev/serial0', { baudRate: 9600 });
 const parser = port.pipe(new Readline({ delimiter: '\n' }));
 
+let d = new Date().toString();
   console.log('printer opening');
-// port.write("start-up succesfully \n \n");
+ port.write("/n _Huddle is now findable on the internet! /n");
+  port.write("\n \n");
+  port.write(d);
+  port.write("\n \n");
+  port.write("\n \n");
+  port.write("\n \n");
+
 
 // set port, listen for requests
 const server = app.listen(80, () => {
@@ -60,7 +67,7 @@ let  nameSig="- \n";
 let  message="weclome \n";
 let  text="- \n";
 let  nameText="- \n";
-let d ="";
+//let d ="";
 
 const io = require('socket.io')(server, {
     cors: {
