@@ -463,6 +463,10 @@ body { font-family: sans-serif; }
  
 }
 
+.titleExp{
+    font-family: "Open Sans"; 
+    margin-top:80px !important;
+}
 .experiments{
     margin-top: 80px;
     display:flex;
