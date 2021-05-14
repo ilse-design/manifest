@@ -61,6 +61,17 @@ background-image: url(https://unafraid-crab-8439.dataplicity.io/);
   background-repeat: no-repeat;
   background-size: cover;
   }
+  .wrapperData{
+      padding-top: 150px;
+    margin-right: auto; /* 1 */
+    margin-left:  auto; /* 1 */
+  
+    max-width: 1080px; /* 2 */
+  
+    padding-right: 10px; /* 3 */
+    padding-left:  10px; /* 3 */
+   
+}
 
 
     
@@ -87,6 +98,7 @@ background-image: url(https://unafraid-crab-8439.dataplicity.io/);
     }
 
 .header{
+    top: 0;
     position: fixed;
     width: 100%;
     background-color:white;
